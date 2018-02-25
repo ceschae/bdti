@@ -9,7 +9,7 @@
 # production
 /build
 
-#secrets
+# secrets
 /src/components/constants.jsx
 
 # misc
