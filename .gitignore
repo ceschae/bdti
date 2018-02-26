@@ -11,6 +11,7 @@
 
 # secrets
 /src/components/constants.jsx
+starter-data.json
 
 # misc
 .DS_Store
