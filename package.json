@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/storage": "^1.6.0",
     "firebase": "^4.10.1",
+    "google-cloud": "^0.57.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",

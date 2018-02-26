@@ -7,6 +7,7 @@ import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-route
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import Account from "./components/Account";
+import ThingDetail from "./components/ThingDetail";
 import constants from "./components/constants";
 
 import './App.css';
@@ -31,7 +32,12 @@ class App extends Component {
   }
 
   handleSignOut(evt) {
-    evt.preventDefault();
+    evt.preventDefault();firebase.auth().signOut()
+      .then(this.setState({currUser: null}))
+      .catch(err => {
+        this.setState({errCode: err.code});
+        alert(err.message);
+      });
   }
 
   render() {
@@ -56,6 +62,7 @@ class App extends Component {
                 <Route exact path={constants.routes.signin} component={SignIn} />
                 <Route path={constants.routes.home} component={Home} />
                 <Route path={constants.routes.account} component={Account} />
+                <Route path={constants.routes.thing} component={ThingDetail} />
             </Switch>
           </div>
         </div>
