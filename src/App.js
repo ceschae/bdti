@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/storage';
 import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import Home from "./components/Home";

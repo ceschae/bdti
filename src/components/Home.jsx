@@ -4,15 +4,18 @@ import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-route
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/storage';
 
 import ThingCard from "./ThingCard";
+import constants from "./constants";
 
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             currUser: undefined,
-            userRef: undefined
+            userRef: undefined,
+            imgUrl: constants.default.imgUrl
         }
     }
 
@@ -41,16 +44,15 @@ export default class Home extends React.Component {
         }
 
         let things = [];
+
         this.state.thingsRef.forEach(thingSnapshot => {
-            things.push(
-                <ThingCard key={thingSnapshot.key} thingSnapshot={thingSnapshot} />
-            );
+            things.push(<ThingCard key={thingSnapshot.key} thingSnapshot={thingSnapshot}/>);
         });
         return (
             <div className="container">
                 <div id="header">
                     <p>Welcome! Are you bored? How about doing something? Click on any of the cards to know what to do, or add a new thing here:</p>
-                    <button type="button" class="btn btn-primary">Add New Activity</button>
+                    <button type="button" className="btn btn-primary">Add New Activity</button>
                 </div>
                 <div id="activities">
                     {things}

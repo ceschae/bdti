@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-route
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/storage';
 
 export default class Account extends React.Component {
     constructor(props) {
