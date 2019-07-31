@@ -1,5 +1,4 @@
-Success! Created bdti at C:\git\bdti\bdti
-Inside that directory, you can run several commands:
+Success! Created bdti. Inside the directory, you can run several commands:
 
   `npm start`:
     Starts the development server.
